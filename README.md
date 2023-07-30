@@ -1,4 +1,4 @@
-# Kalen. \*\*IN EARLY DEVELOPMENT**
+# Kalen. [IN EARLY DEVELOPMENT]
 
 ## Authors
 
