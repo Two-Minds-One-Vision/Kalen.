@@ -23,6 +23,6 @@ An addition to the above key features, Kalen. will also offer:
 
 Kalen. is built using the MERN Stack:
 
-- Frontend: React
+- Frontend: React w/ [React-Bootstrap](https://react-bootstrap.github.io/docs/getting-started/introduction)
 - Backend: Node.js with Express
 - Database: MongoDB
