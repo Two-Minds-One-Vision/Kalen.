@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kalen. [IN EARLY DEVELOPMENT]
 
-## Getting Started
+## Authors
 
-First, run the development server:
+- [Jeremiah Lipscomb](https://github.com/jlipscomb071)
+- [Stephon Ricks](https://github.com/xFallingDuskx)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Kalen. is a full-stack, mobile-friendly scheduling platform. Created with the objective of promoting inclusivity in meeting scheduling services by eliminating the paywall, Kalen. ensurses equal accessibility and convenience for all users. It utilizes React for an interactive frontend and Node.js with MongoDB for a robust backend.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Anticipated Features 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Kalen. will offer the following key features:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Account Creation
+- Availability Viewing
+- Meeting Scheduling
+- Calendar Previewing
 
-## Learn More
+An addition to the above key features, Kalen. will also offer:
+- An AI assistance to streamline meeting scheduling
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Kalen. is built using the MERN Stack:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Frontend: React w/ [React-Bootstrap](https://react-bootstrap.github.io/docs/getting-started/introduction)
+- Backend: Node.js with Express
+- Database: MongoDB
