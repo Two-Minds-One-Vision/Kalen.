@@ -4,6 +4,7 @@ import Router from "./routes.mjs"
 import dotenv  from "dotenv"
 import path from "path"
 import { fileURLToPath } from 'url';
+import cors from 'cors'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -14,14 +15,7 @@ dotenv.config({ path: envPath })
 
 const app = express()
 app.use(express.json())
-
-// Enable CORS
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT,DELETE");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-//   next();
-// });
+app.use(cors())
 
 const username = process.env.VITE_USERNAME
 const password = process.env.VITE_PASSWORD
@@ -41,20 +35,6 @@ const connection = mongoose.connection
 connection.on("error", console.error.bind(console, "connection error: "))
 connection.once("open", async function () {
   console.log("Connected successfully")
-
-  // // Access a collection
-  // const collection = connection.db.collection('listingsAndReviews'); // Change to your actual collection name
-
-  // // Define your query and perform the query here
-  // const query = {
-  //   room_type: "Private room"
-  // }; // Define your query
-  // try {
-  //   const result = await collection.find(query).toArray();
-  //   console.log(result);
-  // } catch (err) {
-  //   console.error(err);
-  // }
 })
 
 app.use(Router)
