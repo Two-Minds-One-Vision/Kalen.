@@ -9,6 +9,7 @@ import ProfilePage from "./pages/Profile/ProfilePage"
 import CalendarViewPage from "./pages/CalendarView/CalendarViewPage"
 import MeetingsPage from "./pages/Meetings/MeetingsPage"
 import MeetingDetailsPage from "./pages/Meetings/MeetingDetailsPage.jsx"
+import PollsPage from "./pages/Polls/PollsPage.jsx"
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path = "/meetings" element={<MeetingsPage />}/>
           <Route path = "/meetings/:id/edit" element={<MeetingDetailsPage />}/>
           <Route path = "/meetings/schedule" element={<MeetingDetailsPage />}/>
+          <Route path = "/polls" element={<PollsPage />}/>
         </Routes>
       </Router>
     </>
