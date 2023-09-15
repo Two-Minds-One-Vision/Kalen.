@@ -1,6 +1,7 @@
 import express from "express";
 import User from "./models/usermodel.mjs";
 import Event from "./models/eventmodel.mjs";
+import Poll from "./models/pollmodel.mjs"
 const ExpressApp = express();
 
 console.log("Entered routes")
@@ -136,6 +137,78 @@ ExpressApp.delete("/events/:id", async (request, response) => {
   } catch (error) {
     response.status(500).send(error);
     console.log("Error deleting event:", error)
+  }
+
+})
+
+
+/* GROUP POLL ENDPOINTS */
+
+ExpressApp.post("/polls", async (request, response) => {
+  const poll = new Poll(request.body)
+
+  try {
+    await poll.save();
+    console.log("Successfully created group poll")
+    response.status(200).send(event)
+  } catch (error) {
+    console.log("Error creating group poll: ", error)
+    response.status(500).send(error)
+  }
+})
+
+ExpressApp.get("/polls", async (request, response) => {
+  try {
+      const queryConditions = []
+      if (request.query.organizerEmail) {
+          queryConditions.push({ organizerEmail: request.query.organizerEmail })
+      }
+      const polls = await Poll.find().or(queryConditions)
+      response.status(200).send(polls)
+      console.log("Successfully fetched group polls")
+  } catch (error) {
+      console.error("Error fetching group polls: ", error)
+      response.status(500).send(error)
+  }
+})
+
+ExpressApp.put("/polls/:id", async (request, response) => {
+  const pollId = request.params.id
+  const updatedPollDetails = {
+    eventId: request.body.eventId,
+    name: request.body.name,
+    organizerName: request.body.organizerName,
+    organizerEmail: request.body.organizerEmail,
+    deadline: request.body.deadline,
+    details: request.body.details,
+    options: request.body.options,
+    responses: request.body.responses,
+    dateCreated: request.body.dateCreated,
+    dateLastUpdated: request.body.dateLastUpdated,
+  }
+
+  try {
+    const result = await Poll.findByIdAndUpdate(
+      pollId,
+      updatedPollDetails)
+    console.log("Successfully updated group poll:", result)
+    response.sendStatus(200)
+  } catch (error) {
+    response.status(500).send(error);
+    console.log("Error updating group poll: ", error)
+  }
+})
+
+ExpressApp.delete("/polls/:id", async (request, response) => {
+  const pollId = request.params.id
+
+  try {
+    const result = await Poll.findByIdAndDelete(pollId)
+    console.log("Successfully deleted group poll:", result)
+    response.sendStatus(200)
+  } catch (error) {
+    console.log("Error deleting group poll:", error)
+    response.status(500).send(error);
   }
 
 })
