@@ -1,0 +1,27 @@
+.error {
+    color: rgba(255, 0, 0, 0.7);
+}
+
+#form-text-input {
+    min-height: fit-content;
+    max-height: fit-content;
+}
+
+#form-text-input input {
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: none;
+    border-bottom: 3px solid goldenrod;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border-radius: 0;
+}
+
+#form-text-input input:focus {
+    outline: none;
+}

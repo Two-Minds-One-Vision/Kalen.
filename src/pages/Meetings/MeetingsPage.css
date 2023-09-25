@@ -1,0 +1,47 @@
+#main-container {
+    padding: 2rem;
+}
+
+#sub-container {
+    min-width: 100%;
+    max-width: 100%;
+    display: flex;
+}
+
+#notice {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+#notice span {
+    font-weight: bold;
+}
+
+#schedule-btn {
+    padding: 0.5rem;
+    background-color: goldenrod;
+    color: whitesmoke;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+#schedule-btn:hover {
+    background-color: black;
+    color: whitesmoke;
+    transition: background-color ease-out 0.5s;
+}
+
+@media only screen and (max-width: 768px) {
+    #main-container h1 {
+        text-align: center;
+    }
+    #sub-container {
+        flex-direction: column;
+    }
+
+    #schedule-btn {
+        margin: auto;
+        margin-top: 1rem;
+    }
+}

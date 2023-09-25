@@ -8,7 +8,8 @@ import LoginPage from "./pages/Login/LoginPage"
 import ProfilePage from "./pages/Profile/ProfilePage"
 import CalendarViewPage from "./pages/CalendarView/CalendarViewPage"
 import MeetingsPage from "./pages/Meetings/MeetingsPage"
-import './App.css'
+import MeetingDetailsPage from "./pages/Meetings/MeetingDetailsPage.jsx"
+
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
           <Route path = "/profile" element={<ProfilePage />}/>
           <Route path = "/calendar-view" element={<CalendarViewPage />}/>
           <Route path = "/meetings" element={<MeetingsPage />}/>
+          <Route path = "/meetings/:id/edit" element={<MeetingDetailsPage />}/>
+          <Route path = "/meetings/schedule" element={<MeetingDetailsPage />}/>
         </Routes>
       </Router>
     </>

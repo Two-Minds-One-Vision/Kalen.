@@ -1,0 +1,37 @@
+.error {
+    color: rgba(255, 0, 0, 0.7);
+    min-height: fit-content;
+    max-height: fit-content;
+    text-align: center;
+}
+
+#form-dtp-area {
+    min-height: fit-content;
+    max-height: fit-content;
+}
+
+#date-picker { 
+    display: block; 
+    margin-inline: auto;
+    margin-top: 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid goldenrod;
+}
+
+#date-picker::-webkit-datetime-edit-fields-wrapper { 
+    color: goldenrod;
+}
+
+#date-picker::-webkit-datetime-edit{ 
+    color: aqua;
+    padding: 0.25rem; 
+}
+
+#date-picker::-webkit-datetime-edit-month-field,
+#date-picker::-webkit-datetime-edit-day-field,
+#date-picker::-webkit-datetime-edit-year-field { 
+    color: black;
+}
+
+

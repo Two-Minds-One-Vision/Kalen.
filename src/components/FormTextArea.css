@@ -1,0 +1,31 @@
+.error {
+    color: rgba(255, 0, 0, 0.7);
+    min-height: fit-content;
+    max-height: fit-content;
+}
+
+#form-text-area {
+    min-height: fit-content;
+    max-height: fit-content;
+}
+
+#form-text-area textarea {
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: none;
+    border-bottom: 3px solid goldenrod;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border-radius: 0;
+    text-align: left;
+    vertical-align: text-bottom;
+}
+
+#form-text-area textarea:focus {
+    outline: none;
+}
