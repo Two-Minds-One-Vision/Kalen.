@@ -1,0 +1,99 @@
+.meeting-card {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: fit-content;
+    max-height: fit-content;
+    background-color: whitesmoke;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    padding: 0.5rem;
+    display: flex;
+}
+  
+/* Pre-render the bigger shadow, but hide it */
+.meeting-card::after {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Transition to showing the bigger shadow on hover */
+.meeting-card:hover::after {
+    opacity: 1;
+}
+
+.meeting-card:hover {
+    transition: transform 0.2s ease;
+    transition: background-color 0.2s ease;
+
+    transform: scale(1.025);
+    background-color: goldenrod;
+}
+
+.meeting-card-dt-container {
+    min-width: fit-content;
+    max-width: fit-content;
+    padding: 0.75rem;
+    border-right: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.meeting-card-dt-date {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.meeting-card-dt-time {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.meeting-card-details {
+    flex-grow: 1;
+    min-width: auto;
+    padding-inline: 0.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.meeting-card-details h2 {
+    margin-bottom: 0.5rem;
+}
+
+.meeting-card-details p {
+    margin-bottom: 0.25rem;
+    line-height: normal;
+}
+
+.meeting-options {
+    min-width: fit-content;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.25rem;
+}
+
+.meeting-options button, 
+.meeting-options a {
+    text-decoration: underline;
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    margin-right: 0.75rem;
+    border: none;
+
+}
+
+.meeting-options button:hover, 
+.meeting-options a:hover {
+    font-weight: bold;
+    color: inherit;
+}
+
+.delete-confirmation p {
+    font-weight: bold;
+    padding-top: 0.5rem;
+}
