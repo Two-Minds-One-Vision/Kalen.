@@ -22,6 +22,7 @@ const PollsPage = () => {
     const [organizerEmail, setOrganizerEmail] = useState('')
     const [deadline, setDeadline] = useState(moment("2030-07-30 12:00"))
     const [details, setDetails] = useState('')
+    const [selectedDates, setSelectedDates] = useState([])
     const [options, setOptions] = useState([])
     const [responses, setResponses] = useState([])
     const [step, setStep] = useState(0)
@@ -141,7 +142,22 @@ const PollsPage = () => {
     const step1 = (
         <div id='polls-s1'>
             <h2>Select Dates</h2>
-            {/* TODO: add titles & logic */}
+            {/* TODO:
+                - Allow user to enter single date or date range
+                - Show selected datas below input fields
+                - Allow user to delete selected dates 
+                - Prevent certain actions (i.e. date is before today or invalid range)
+            */}
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div id='polls-s1-input-group' style={{ display: 'flex', justifyContent: 'center', marginBottom: '2px' }}>
+                    <input id='polls-s1-input-field1' type='date' />
+                    <p style={{ marginInline: '5px' }}> __ </p>
+                    <input id='polls-s1-input-field2' type='date' />
+                </div>
+                <small style={{marginTop: '3px'}} className='error'>Must be the same</small>
+                <button style={{ width: 'fit-content', alignSelf: 'center', marginTop: '10px'}}>Add Date</button>
+                
+            </div>
             <div className='poll-btn-group'>
                 {step === 1 ?
                     <button onClick={() => setStep(1)} className='poll-btn btn-anim-1'> Save </button>
@@ -167,7 +183,7 @@ const PollsPage = () => {
     )
 
     const step3 = (
-        <div id='polls-s2'>
+        <div id='polls-s3'>
             <h2>Confirm</h2>
             {/* TODO: confirm all given information */}
             {/* TODO: 
